@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
+            color: #fff;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            font-size: 3.5rem;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .games-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .game {
+            background: linear-gradient(135deg, #ffffff, #d4e4f3);
+            border: 2px solid #1e3c72;
+            border-radius: 15px;
+            width: 250px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease, background-color 0.5s ease, box-shadow 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game:before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -100%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+            transform: rotate(45deg);
+            transition: 0.6s;
+            z-index: 0;
+        }
+
+        .game:hover:before {
+            top: 0;
+            left: 0;
+        }
+
+        .game:hover {
+            transform: translateY(-10px);
+            background: linear-gradient(135deg, #2a5298, #1e3c72);
+            color: #fff;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
+
+        .game:hover a {
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .game {
+                width: 200px;
+                height: 120px;
+                font-size: 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .game {
+                width: 150px;
+                height: 100px;
+            }
+
+            a {
+                font-size: 1.2rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Mini Games</h1>
+    <div class="games-container">
+        <div class="game">
+            <a href="sudoku.html" target="_blank">Sudoku</a>
+        </div>
+        <div class="game">
+            <a href="tic.html" target="_blank">Tic Tac Toe</a>
+        </div>
+        <div class="game">
+            <a href="rock.html" target="_blank">Rock Paper Scissors</a>
+        </div>
+    </div>
+</body>
+</html>
